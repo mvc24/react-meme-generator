@@ -1,0 +1,29 @@
+axios({
+method: 'get',
+url: 'https://bit.ly/2mTM3nY',
+responseType: 'stream'
+})
+.then(function (response) {
+response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+});
+
+--> next library looks good but hardly has any downloads
+
+
+https://www.npmjs.com/package/expo-filedownload
+
+
+
+maybe another option:
+
+https://www.npmjs.com/package/capacitor-plugin-filedownload
+
+might be interesting?:
+https://www.npmjs.com/package/uncontrollable
+
+
+
+
+
+
+state functions I'll need:
