@@ -1,6 +1,7 @@
 import './App.css';
 import { downloadAUrl } from 'better-file-downloader';
 import React, { useState } from 'react';
+import Select from 'react-select';
 
 export default function App() {
   const [topText, setTopText] = useState('');
@@ -16,7 +17,7 @@ export default function App() {
         <form>
           <label name="Meme template">
             Choose your template
-            <input />
+            <input name="Templates" type="" />
           </label>
           <img
             src="url"

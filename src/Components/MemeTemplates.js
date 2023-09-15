@@ -1,4 +1,4 @@
-export const memeArray = [
+const memeArrayFull = [
   {
     id: 'aag',
     name: 'Ancient Aliens Guy',
@@ -3188,4 +3188,13 @@ export const memeArray = [
   },
 ];
 
-console.log(memeArray.length);
+export const memeTemplatesFiltered = memeArrayFull.filter(
+  () => memeArrayFull.lines === 2,
+);
+
+export const memeTemplates = memeTemplatesFiltered.map((item) => {
+  const container = {};
+  container[item.name] = item.name;
+  container[item.blank] = item.url;
+  return container;
+});

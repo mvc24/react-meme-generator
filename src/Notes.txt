@@ -62,3 +62,18 @@ export default function example() {
     </button>
   );
 }
+{
+    id: 'aag',
+    name: 'Ancient Aliens Guy',
+    lines: 2,
+    overlays: 0,
+    styles: [],
+    blank: 'https://api.memegen.link/images/aag.png',
+    example: {
+      text: ['', 'aliens'],
+      url: 'https://api.memegen.link/images/aag/_/aliens.png',
+    },
+    source: 'http://knowyourmeme.com/memes/ancient-aliens',
+    keywords: ['History Channel'],
+    _self: 'https://api.memegen.link/templates/aag',
+  },
