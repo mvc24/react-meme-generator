@@ -4,6 +4,9 @@ dependencies:
   '@upleveled/react-scripts':
     specifier: 5.0.12
     version: 5.0.12(eslint@8.49.0)(react@18.2.0)(typescript@5.2.2)
+  better-file-downloader:
+    specifier: ^1.0.9
+    version: 1.0.9
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3493,6 +3496,10 @@ packages:
 
   /batch@0.6.1:
     resolution: {integrity: sha512-x+VAiMRL6UPkx+kudNvxTl6hB2XNNCG2r+7wixVfIYwu/2HKRXimwQyaumLjMveWvT2Hkd/cAJw+QBMfJ/EKVw==}
+    dev: false
+
+  /better-file-downloader@1.0.9:
+    resolution: {integrity: sha512-gWj1W1dNzMbdD+/odqBO+GgMvFsv9RTXTmBHvXEFdFG3jt27PWWFoXA2oYj7bQT6B/jG71DVmvWPAGAgjkXEqg==}
     dev: false
 
   /bfj@7.1.0:

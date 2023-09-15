@@ -12,7 +12,11 @@ response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
 
 https://www.npmjs.com/package/expo-filedownload
 
+https://www.npmjs.com/package/better-file-downloader
+(already has a button)
 
+https://www.npmjs.com/package/react-downloadfile-hook
+also has a button
 
 maybe another option:
 
@@ -21,9 +25,40 @@ https://www.npmjs.com/package/capacitor-plugin-filedownload
 might be interesting?:
 https://www.npmjs.com/package/uncontrollable
 
+React widgets for dropdown handling
+https://www.npmjs.com/package/react-downloadfile-hook
 
-
-
+https://www.npmjs.com/package/react-select
 
 
 state functions I'll need:
+set top text
+set bottom text
+set meme template
+download image
+show preview
+
+
+import React from 'react';
+import { downloadAUrl } from 'better-file-downloader';
+
+export default function example() {
+  const download = async (url) => {
+    await downloadAUrl(url, {
+      fileName: 'example-file',
+      extension: '.pdf',
+      contentType: 'application/pdf',
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        download('https://s3.amazonaws.com/my-uploaded-files/images/cat.jpg')
+      }
+    >
+      Download an image!
+    </button>
+  );
+}

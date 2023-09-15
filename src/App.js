@@ -1,22 +1,40 @@
 import './App.css';
+import { downloadAUrl } from 'better-file-downloader';
+import React, { useState } from 'react';
 
 export default function App() {
+  const [topText, setTopText] = useState('');
+  const [bottomText, setBottomText] = useState('');
+  const [template, setTemplate] = 'image';
+  const [preview, setPreview] = '';
+  const [download, setDownload] = '';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="box">
+        <h1>Make your own meme!</h1>
+        <form>
+          <label name="Meme template">
+            Choose your template
+            <input />
+          </label>
+          <img
+            src="url"
+            data-test-id="meme-image"
+            alt="an empty meme template"
+          />
+          <label name="Top text">
+            Top text
+            <input />
+          </label>
+          <label name="Bottom text">
+            Bottom text
+            <input />
+          </label>
+        </form>
+        <div>Preview</div>
+        <div>Download</div>
+      </div>
     </div>
   );
 }
