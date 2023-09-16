@@ -77,3 +77,125 @@ export default function example() {
     keywords: ['History Channel'],
     _self: 'https://api.memegen.link/templates/aag',
   },
+
+Needed components
+dropdown:
+returns the empty template
+uses the prop "blank" as url
+https://react.dev/learn/sharing-state-between-components#challenges
+how to filter the list by typing
+
+<div>
+        <input type="search" list="list" autoComplete="on" value={text} onChange={onChange} />
+        <datalist id="list">
+          { data.map( d => <option key={d.value} value={d.label} /> )}
+        </datalist>
+      </div>
+
+const [roomId, setRoomId] = useState('general');
+<select value={roomId}
+onChange={e => setRoomId(e.target.value)}>
+          <option value="general">general</option>
+          <option value="travel">travel</option>
+          <option value="music">music</option>
+        </select>
+
+input fields
+e.g.
+see https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component
+
+
+import { useFormInput } from './useFormInput.js';
+
+export default function Form() {
+  const firstNameProps = useFormInput('Mary');
+  const lastNameProps = useFormInput('Poppins');
+
+  return (
+    <>
+      <label>
+        First name:
+        <input {...firstNameProps} />
+      </label>
+      <label>
+        Last name:
+        <input {...lastNameProps} />
+      </label>
+      <p><b>Good morning, {firstNameProps.value} {lastNameProps.value}.</b></p>
+    </>
+  );
+}
+and
+import { useState } from 'react';
+
+export function useFormInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  const inputProps = {
+    value: value,
+    onChange: handleChange
+  };
+
+  return inputProps;
+}
+
+Button
+download:
+
+set file name:
+https://react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component
+
+export function getImageUrl(person, size = 's') {
+  return (
+    'https://i.imgur.com/' +
+    person.imageId +
+    size +
+    '.jpg'
+  );
+}
+
+import { getImageUrl } from './utils.js';
+
+function Avatar({ person, size }) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+export default function Profile() {
+  return (
+    <div>
+      <Avatar
+        size={100}
+        person={{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
+      />
+      <Avatar
+        size={80}
+        person={{
+          name: 'Aklilu Lemma',
+          imageId: 'OKS67lh'
+        }}
+      />
+      <Avatar
+        size={50}
+        person={{
+          name: 'Lin Lanying',
+          imageId: '1bX5QH6'
+        }}
+      />
+    </div>
+  );
+}

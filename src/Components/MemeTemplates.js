@@ -3188,13 +3188,16 @@ const memeArrayFull = [
   },
 ];
 
-export const memeTemplatesFiltered = memeArrayFull.filter(
+const memeTemplatesFiltered = memeArrayFull.filter(
   () => memeArrayFull.lines === 2,
 );
+console.log(memeTemplatesFiltered);
 
-export const memeTemplates = memeTemplatesFiltered.map((item) => {
-  const container = {};
-  container[item.name] = item.name;
-  container[item.blank] = item.url;
-  return container;
-});
+export const memeTemplates = memeTemplatesFiltered.map((meme, index) => ({
+  id: index + 1,
+  name: meme.name,
+  url: meme.blank,
+}));
+
+/* const makeTemplate = (memeTemplates.map(memeTemplate)) => {
+  return (key={`memeTemplate-${memeTemplate.id}`} value={memeTemplate.name} )} */
