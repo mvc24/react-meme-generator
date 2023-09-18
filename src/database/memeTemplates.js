@@ -1,4 +1,4 @@
-const memeArrayFull = [
+export const memeArray = [
   {
     id: 'aag',
     name: 'Ancient Aliens Guy',
@@ -3186,18 +3186,13 @@ const memeArrayFull = [
     keywords: [],
     _self: 'https://api.memegen.link/templates/zero-wing',
   },
-];
-
-const memeTemplatesFiltered = memeArrayFull.filter(
-  () => memeArrayFull.lines === 2,
-);
-console.log(memeTemplatesFiltered);
-
-export const memeTemplates = memeTemplatesFiltered.map((meme, index) => ({
-  id: index + 1,
-  name: meme.name,
-  url: meme.blank,
-}));
+]
+  .filter((meme) => meme.lines === 2)
+  .map((meme, index) => ({
+    id: index + 1,
+    name: meme.name,
+    url: meme.blank,
+  }));
 
 /* const makeTemplate = (memeTemplates.map(memeTemplate)) => {
   return (key={`memeTemplate-${memeTemplate.id}`} value={memeTemplate.name} )} */

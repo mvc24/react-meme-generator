@@ -2,8 +2,7 @@ import './App.css';
 import { downloadAUrl } from 'better-file-downloader';
 import React, { useState } from 'react';
 import Select from 'react-select';
-import SimpleDropdown from './Components/Components';
-import { memeTemplates } from './Components/MemeTemplates';
+import { memeArray } from './database/memeTemplates.js';
 
 export default function App() {
   const [memeTemplate, setMemeTemplate] = useState('');
@@ -18,7 +17,21 @@ export default function App() {
       <div className="box">
         <h1>Make your own meme!</h1>
 
-        <SimpleDropdown />
+        <label>
+          <p>Choose your template</p>
+          <select
+            name="Meme template"
+            value={memeTemplate}
+            onChange={(e) => setMemeTemplate(e.target.value)}
+          >
+            <option value="">-- Select your meme --</option>
+            {memeArray.map((template) => (
+              <option key={`meme-${template.id}`} value={`meme-${template.id}`}>
+                {template.name}
+              </option>
+            ))}
+          </select>
+        </label>
 
         <img src="url" data-test-id="meme-image" alt="an empty meme template" />
         <form>
